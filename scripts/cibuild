@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e # exit on error
+
+bundle exec jekyll build
+
+bundle exec htmlproofer ./docs --disable-external
