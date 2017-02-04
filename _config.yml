@@ -23,4 +23,3 @@ theme: minima
 gems:
   - jekyll-feed
   - jekyll-admin
-exclude: [vendor]
