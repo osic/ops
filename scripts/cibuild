@@ -4,4 +4,4 @@ set -e # exit on error
 
 bundle exec jekyll build
 
-bundle exec htmlproofer ./docs --disable-external
+bundle exec htmlproofer ./_site --disable-external

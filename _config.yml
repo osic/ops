@@ -21,10 +21,9 @@ github_username: jekyll
 markdown: kramdown
 theme: minima
 gems:
-- jekyll-feed
-- jekyll-admin
+  - jekyll-feed
+  - jekyll-admin
 exclude:
-- Gemfile
-- Gemfile.lock
-- vendor
-destination: docs
+  - Gemfile
+  - Gemfile.lock
+  - vendor
