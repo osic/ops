@@ -19,7 +19,7 @@ rvm:
 
 install: gem install jekyll html-proofer
 #script: jekyll build && htmlproofer ./_site --disable-external
-script: ls -lha
+script: jekyll build
 
 env:
   global:
