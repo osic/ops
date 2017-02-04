@@ -24,4 +24,4 @@ env:
 sudo: false # route your build to the container-based infrastructure for a faster build
 #sudo: required
 
-dist: trusty
+#dist: trusty
