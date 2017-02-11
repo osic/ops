@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
-  <link rel="canonical" href="/">
+  <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/feed.xml">
 
   
@@ -35,7 +35,17 @@
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <div id="main">
-          <div class="home">
+          <ul class="topnav" id="myTopnav">
+  <li><a href="https://goo.gl/51e29g">Deployment Architecture</a></li>
+  <li><a href="https://goo.gl/Cx6LtF">Workload Definition</a></li>
+  <li><a href="https://goo.gl/erWDBb">High Availability of Services</a></li>
+  <li><a href="#about">About</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  </li>
+</ul>
+
+<div class="home">
 
   
 
@@ -82,6 +92,16 @@
       <script src="/assets/js/util.js"></script>
       <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
       <script src="/assets/js/main.js"></script>
+      <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+      </script>
   </body>
 
 </html>

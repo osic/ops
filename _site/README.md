@@ -1,37 +1,7 @@
-## Welcome to GitHub Pages
+[![Build Status](https://travis-ci.org/osic/osic-ops-status.svg?branch=master)](https://travis-ci.org/osic/osic-ops-status)  
 
-You can use the [editor on GitHub](https://github.com/osic/osicops/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Welcome to OSIC Ops  
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Here you will find details related to the Ops team with OSIC and the work carried out by the team. Please take time to review the information available and ask any quesitons or voice concerns/comments via creating an issue.  
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/osic/osicops/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+This repo manages the code that generates the site [https://osic.github.io/osic-ops-status](https://osic.github.io/osic-ops-status) When committing to this repository TravisCI is used to validate commits.  
