@@ -4,16 +4,49 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 estatus:
-  - success # ontarget
-  - warning # jeopardy
-  - danger # willmiss
-  - muted # blocked
+  - name: "ontarget"
+    style: "success"
+    label: "On Target"
+  - name: "atrisk"
+    style: "warning"
+    label: "At Risk"
+  - name: "willmiss"
+    style: "danger"
+    label: "Will Miss"
+  - name: "blocked"
+    style: "muted"
+    label: "Blocked"
+epics:
+  - name: "incsca"
+    canonical: "Incremental Scaling"
+    description: "Scaling your OpenStack cloud."
+    status: "success"
+  - name: "cpavai"
+    canonical: "Control Plane Availability"
+    description: "When things break, recover quickly."
+    status: "muted"
+  - name: "novice"
+    canonical: "Ease of Deployment"
+    description: "Debunking OpenStack is difficult to install."
+    status: "success"
+  - name: "livemi"
+    canonical: "VM Availability"
+    description: "Data just as important as control plane."
+    status: "danger"
+  - name: "rollin"
+    canonical: "Rolling Upgrades"
+    description: "Upgrading without shutting it all down."
+    status: "warning"
+  - name: "zerodo"
+    canonical: "Zero Downtime Upgrades"
+    description: "Upgrading without shutting anything down."
+    status: "warning"
 ---
 
 # Ocata Documentation
 ___
 
-<ul class="topnav" id="myTopnav">
+<ul>
   <li><a href="https://goo.gl/51e29g">Deployment Architecture</a></li>
   <li><a href="https://goo.gl/Cx6LtF">Workload Definition</a></li>
   <li><a href="https://goo.gl/erWDBb">High Availability of Services</a></li>
@@ -21,61 +54,47 @@ ___
 </ul>
 
 
-# Current Status
+# Ocata Epic Status
 ___
 <div class="col-sm-12">
   {% for status in page.estatus %}
     <span class="fa-stack fa-1x" style="float-left">
-      <i class="fa fa-circle fa-stack-2x text-{{ status }}"></i>
+      <i class="fa fa-circle fa-stack-2x text-{{ status.style }}"></i>
       <i class="fa fa-cog fa-stack-1x fa-spin fa-inverse"></i>
     </span>
-    {% if status == 'success' %}
-    <span>On Target</span>
-    {% elsif status == 'warning' %}
-    <span>In Jeopardy</span>
-    {% elsif status == 'danger' %}
-    <span>Will Miss</span>
-    {% else %}
-    <span>Blocked</span>
-    {% endif %}
+    <span>{{ status.label }}</span>
   {% endfor %}
 </div>
 
 <br />
 
-{% for i in (1..6) %}
-<div class="col-md-4 col-sm-6">
+<div class="col-md-12">
+{% for epic in page.epics %}
+<div class="col-md-6">
     <div class="panel panel-default text-center">
         <div class="panel-heading">
             <span class="fa-stack fa-5x">
-                  <i class="fa fa-circle fa-stack-2x
-                  {% if i == 2 or i == 4 %} {% assign status = "willmiss" %} text-danger
-                  {% elsif i == 1 or i == 6 %} {% assign status = "ontarget" %} text-success
-                  {% else %} {% assign status = "blocked" %} text-muted {% endif %}"></i>
-                  <i class="fa fa-cog fa-stack-1x
-                  {% case status %}
-                    {% when 'blocked' %}
-
-                    {% else %}
-                      fa-spin
-                  {% endcase %} fa-inverse"></i>
+                  <i class="fa fa-circle fa-stack-2x text-{{ epic.status }}"></i>
+                  <i class="fa fa-cog fa-stack-1x {% unless epic.status == 'muted' %} fa-spin {% endunless %} fa-inverse"></i>
             </span>
         </div>
         <div class="panel-body">
-            <h4 id="epic-{{ i }}">Epic {{ i }}<a class="anchorjs-link " href="#"></a></h4>
-            {% case status %}
-              {% when 'ontarget' %}
-                <p>Epic is considered ontarget with green status and running gear.</p>
-              {% when 'willmiss' %}
-                <p>Epic is considered willmiss; red status and running gear - work being done.</p>
-              {% when 'blocked' %}
-                <p>Epic is considered blocked with grey status and stopped gear.</p>
-            {% endcase %}
+            <h4 id="epic-{{ epic.name }}">{{ epic.canonical }}<a class="anchorjs-link" href="#"></a></h4>
+            <p>{{ epic.description }}</p>
             <a href="https://01.org/jira/secure/RapidBoard.jspa?rapidView=36&projectKey=OSIC" class="btn btn-primary">Learn More</a>
         </div>
     </div>
 </div>
 {% endfor %}
+</div>
+
+# Pike Planning
+___
+
+<ul>
+  <li><a href="https://goo.gl/J3cOCg">DevOps Pike Recommendations</a></li>
+</ul>
+
 
 <!-- <table id="sampletable" class="datatable">
    <thead>
