@@ -19,11 +19,24 @@
 
     <!-- Scripts -->
       <script src="{{ "/assets/js/jquery.min.js" | relative_url }}"></script>
-      <script src="{{ "/assets/js/jquery.poptrox.min.js" | relative_url }}"></script>
+      <!-- <script src="{{ "/assets/js/jquery.poptrox.min.js" | relative_url }}"></script> -->
       <script src="{{ "/assets/js/skel.min.js" | relative_url }}"></script>
       <script src="{{ "/assets/js/util.js" | relative_url }}"></script>
       <!--[if lte IE 8]><script src="{{ "/assets/js/ie/respond.min.js" | relative_url }}"></script><![endif]-->
       <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+      {% if page.datatable == true %}
+      <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
+      <script>
+        $(document).ready(function(){
+          $('table.datatable').DataTable({
+            paging: true,
+            stateSave: true,
+            searching: true
+          });
+        });
+      </script>
+      {% endif %}
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 
 </html>
