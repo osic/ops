@@ -3,6 +3,11 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+estatus:
+  - success # ontarget
+  - warning # jeopardy
+  - danger # willmiss
+  - muted # blocked
 ---
 
 # Ocata Documentation
@@ -18,16 +23,34 @@ ___
 
 # Current Status
 ___
-_Clicking Learn More button navigates to Jira_  
+<div class="col-sm-12">
+  {% for status in page.estatus %}
+    <span class="fa-stack fa-1x" style="float-left">
+      <i class="fa fa-circle fa-stack-2x text-{{ status }}"></i>
+      <i class="fa fa-cog fa-stack-1x fa-spin fa-inverse"></i>
+    </span>
+    {% if status == 'success' %}
+    <span>On Target</span>
+    {% elsif status == 'warning' %}
+    <span>In Jeopardy</span>
+    {% elsif status == 'danger' %}
+    <span>Will Miss</span>
+    {% else %}
+    <span>Blocked</span>
+    {% endif %}
+  {% endfor %}
+</div>
 
-{% for i in (1..3) %}
+<br />
+
+{% for i in (1..6) %}
 <div class="col-md-4 col-sm-6">
     <div class="panel panel-default text-center">
         <div class="panel-heading">
             <span class="fa-stack fa-5x">
                   <i class="fa fa-circle fa-stack-2x
-                  {% if i == 2 %} {% assign status = "willmiss" %} text-danger
-                  {% elsif i == 1 %} {% assign status = "ontarget" %} text-success
+                  {% if i == 2 or i == 4 %} {% assign status = "willmiss" %} text-danger
+                  {% elsif i == 1 or i == 6 %} {% assign status = "ontarget" %} text-success
                   {% else %} {% assign status = "blocked" %} text-muted {% endif %}"></i>
                   <i class="fa fa-cog fa-stack-1x
                   {% case status %}
