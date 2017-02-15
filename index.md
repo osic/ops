@@ -60,7 +60,7 @@ ___
   {% for status in page.estatus %}
     <span class="fa-stack fa-1x" style="float-left">
       <i class="fa fa-circle fa-stack-2x text-{{ status.style }}"></i>
-      <i class="fa fa-cog fa-stack-1x fa-spin fa-inverse"></i>
+      <i class="fa fa-cog fa-stack-1x {% unless epic.status == 'muted' %} fa-spin {% endunless %} fa-inverse"></i>
     </span>
     <span>{{ status.label }}</span>
   {% endfor %}
