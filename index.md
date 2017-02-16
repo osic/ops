@@ -56,6 +56,7 @@ ___
 
 
 # Ocata Epic Status
+_ocata is pretty much done, these are not reflective of current work_
 ___
 <div class="col-sm-12">
   {% for status in page.estatus %}
