@@ -62,8 +62,6 @@ deliverable:
   - iterateo
   - publishr
 ---
-# Under Construction (WIP)
-
 # Ocata Documentation
 ___
 
@@ -77,7 +75,6 @@ ___
 
 # Ocata Epic Status  
 ___
-_ocata is pretty much done, these are not reflective of current work_  
 
 <div class="col-sm-12">
   {% for status in page.estatus %}
