@@ -5,42 +5,48 @@
 layout: home
 estatus:
   - name: "ontarget"
-    style: "success"
+    style: "green"
     label: "On Target"
   - name: "atrisk"
-    style: "warning"
+    style: "yellow"
     label: "At Risk"
   - name: "willmiss"
-    style: "danger"
+    style: "red"
     label: "Will Miss"
   - name: "blocked"
-    style: "muted"
+    style: "grey"
     label: "Blocked"
 epics:
   - name: "incsca"
     canonical: "Incremental Scaling"
     description: "Scaling your OpenStack cloud."
-    status: "success"
+    status: "green"
+    link: "https://01.org/jira/browse/OSIC-393"
   - name: "cpavai"
     canonical: "Control Plane Availability"
     description: "When things break, recover quickly."
-    status: "muted"
+    status: "green"
+    link: "https://01.org/jira/browse/OSIC-408"
   - name: "novice"
     canonical: "Ease of Deployment"
     description: "Debunking OpenStack is difficult to install."
-    status: "success"
+    status: "green"
+    link: "https://01.org/jira/browse/OSIC-409"
   - name: "livemi"
     canonical: "VM Availability"
     description: "Data just as important as control plane."
-    status: "danger"
-  - name: "rollin"
-    canonical: "Rolling Upgrades"
-    description: "Upgrading without shutting it all down."
-    status: "warning"
+    status: "green"
+    link: "https://01.org/jira/browse/OSIC-402"
   - name: "zerodo"
     canonical: "Zero Downtime Upgrades"
     description: "Upgrading without shutting anything down."
-    status: "warning"
+    status: "green"
+    link: "https://01.org/jira/browse/OSIC-400"
+  - name: "enters"
+    canonical: "Enterprise Scale"
+    description: "Large scale deployment (1000 nodes)."
+    status: "yellow"
+    link: "https://01.org/jira/browse/OSIC-409"
 ---
 # Under Construction (WIP)
 
@@ -55,14 +61,15 @@ ___
 </ul>
 
 
-# Ocata Epic Status
-_ocata is pretty much done, these are not reflective of current work_
+# Ocata Epic Status  
 ___
+_ocata is pretty much done, these are not reflective of current work_  
+
 <div class="col-sm-12">
   {% for status in page.estatus %}
     <span class="fa-stack fa-1x" style="float-left">
-      <i class="fa fa-circle fa-stack-2x text-{{ status.style }}"></i>
-      <i class="fa fa-cog fa-stack-1x {% unless status.style == 'muted' %} fa-spin {% endunless %} fa-inverse"></i>
+      <i class="fa fa-circle fa-stack-2x" style="color:{{ status.style }}"></i>
+      <i class="fa fa-cog fa-stack-1x {% unless status.style == 'grey' %} fa-spin {% endunless %} fa-inverse"></i>
     </span>
     <span>{{ status.label }}</span>
   {% endfor %}
@@ -76,14 +83,14 @@ ___
     <div class="panel panel-default text-center">
         <div class="panel-heading">
             <span class="fa-stack fa-5x">
-                  <i class="fa fa-circle fa-stack-2x text-{{ epic.status }}"></i>
-                  <i class="fa fa-cog fa-stack-1x {% unless epic.status == 'muted' %} fa-spin {% endunless %} fa-inverse"></i>
+                  <i class="fa fa-circle fa-stack-2x" style="color:{{ epic.status }}"></i>
+                  <i class="fa fa-cog fa-stack-1x {% unless epic.status == 'grey' %} fa-spin {% endunless %} fa-inverse"></i>
             </span>
         </div>
         <div class="panel-body">
             <h4 id="epic-{{ epic.name }}">{{ epic.canonical }}<a class="anchorjs-link" href="#"></a></h4>
             <p>{{ epic.description }}</p>
-            <a href="https://01.org/jira/secure/RapidBoard.jspa?rapidView=36&projectKey=OSIC" class="btn btn-primary">Learn More</a>
+            <a href="{{ epic.link }}" target="_blank" class="btn btn-primary">Learn More</a>
         </div>
     </div>
 </div>
