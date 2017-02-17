@@ -20,7 +20,7 @@ epics:
   - name: "incsca"
     canonical: "Incremental Scaling"
     description: "Scaling your OpenStack cloud."
-    status: "green"
+    status: "grey"
     link: "https://01.org/jira/browse/OSIC-393"
   - name: "cpavai"
     canonical: "Control Plane Availability"
@@ -47,6 +47,20 @@ epics:
     description: "Large scale deployment (1000 nodes)."
     status: "yellow"
     link: "https://01.org/jira/browse/OSIC-409"
+deliverable:
+  - research
+  - workhype
+  - workdefi
+  - toolhype
+  - tooldefi
+  - envdefin
+  - toolpred
+  - envdeplo
+  - toolpost
+  - baseline
+  - basepubr
+  - iterateo
+  - publishr
 ---
 # Under Construction (WIP)
 
