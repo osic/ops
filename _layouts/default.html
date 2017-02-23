@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								{% include header.html %}
+
+							<!-- Banner -->
+                {% if page.banner %}
+								  {% include banner.html %}
+                {% endif %}
+
+							<!-- Section -->
+                {{ content }}
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					{% include sidebar.html %}
+
+			</div>
+
+		<!-- Scripts -->
+			{% include scripts.html %}
+
+	</body>
+
+</html>

@@ -1,0 +1,39 @@
+<section>
+  <header class="major">
+    <h2>{{ page.osrelease }} Epic Status</h2>
+  </header>
+
+<div>
+  {% for status in page.estatus %}
+    <span class="fa-stack fa-1x" style="float-left">
+      <i class="fa fa-circle fa-stack-2x" style="color:{{ status.style }}"></i>
+      <i class="fa fa-cog fa-stack-1x {% unless status.style == 'grey' %} fa-spin {% endunless %} fa-inverse"></i>
+    </span>
+    <span>{{ status.label }}</span>
+  {% endfor %}
+<div>&nbsp;</div>
+</div>
+
+<div class="posts">
+{% for epic in page.epics %}
+  <article>
+    <div class="panel panel-default text-center">
+        <div class="panel-heading">
+            <span class="fa-stack fa-5x">
+                  <i class="fa fa-circle fa-stack-2x" style="color:{{ epic.status }}"></i>
+                  <i class="fa fa-cog fa-stack-1x {% unless epic.status == 'grey' %} fa-spin {% endunless %} fa-inverse"></i>
+            </span>
+        </div>
+        <div class="panel-body">
+            <h4 id="epic-{{ epic.name }}">{{ epic.canonical }}<a class="anchorjs-link" href="#"></a></h4>
+            <p>{{ epic.description }}</p>
+            <a href="{{ epic.link }}" target="_blank" class="button">Learn More</a>
+        </div>
+    </div>
+  </article>
+{% endfor %}
+</div>
+</section>
+<section>
+<iframe width="100%" height="600" frameborder="0" scrolling="no" src="https://raxglobal-my.sharepoint.com/personal/melvin_hillsman_rackspace_com/_layouts/15/WopiFrame.aspx?sourcedoc={71fe5a94-fa7d-432b-86bc-562f0264748b}&action=embedview&wdAllowInteractivity=False&wdDownloadButton=True"></iframe>
+</section>
