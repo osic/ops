@@ -3,7 +3,7 @@
     <h2>Pike Epic Status</h2>
   </header>
   <div><span>Not Yet Started</span></div>
-<!-- <div>
+ <div>
   {% for status in page.estatus %}
     <span class="fa-stack fa-1x" style="float-left">
       <i class="fa fa-circle fa-stack-2x" style="color:{{ status.style }}"></i>
@@ -15,7 +15,7 @@
 </div>
 
 <div class="posts">
-{% for epic in page.epics %}
+{% for epic in page.pike_epics %}
   <article>
     <div class="panel panel-default text-center">
         <div class="panel-heading">
@@ -27,14 +27,16 @@
         <div class="panel-body">
             <h4 id="epic-{{ epic.name }}">{{ epic.canonical }}<a class="anchorjs-link" href="#"></a></h4>
             <p>{{ epic.description }}</p>
+            <p id ="{{ epic.id }}" class="pike_epics" >User Stories:</p>
             <a href="{{ epic.link }}" target="_blank" class="button">Learn More</a>
         </div>
     </div>
   </article>
 {% endfor %}
-</div> -->
+</div>
 </section>
 
 <section>
 <iframe width="100%" height="600" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?cid=0B3AFD13EABC0260&resid=B3AFD13EABC0260%21219&authkey=AOKDq8bw7HmkaW8&em=2&wdAllowInteractivity=False&wdDownloadButton=True"></iframe>
 </section>
+

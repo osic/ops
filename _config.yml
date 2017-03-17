@@ -29,3 +29,5 @@ exclude:
 - Gemfile
 - Gemfile.lock
 - vendor
+jsarr:
+- call_jira.js
